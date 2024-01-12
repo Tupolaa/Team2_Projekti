@@ -11,7 +11,8 @@
  - 
 
  ### Laura
- - 
+ - Suunnittelin layouttia figmalla
+ - Tein styles.css tiedoston ja aloitin ulkoasun muokkaamista 
 
  ### Ada
  - 
