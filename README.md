@@ -8,6 +8,8 @@
  [Linkki]
 
  ### Teemu
+ - Tein repon ja tiedostot repoon.
+ - tein pohjan index.hml tiedostoon
  - 
 
  ### Laura
