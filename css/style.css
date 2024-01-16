@@ -9,14 +9,27 @@ body{
 header{
     text-align: left;
 }
-
-
+article{
+    background-color: black;
+    text-align: center;
+    padding: 100px;
+    
+}
+article p{
+    color: aliceblue;
+    margin: 5px;
+}
+img.logo1{
+    max-width: 10px;
+    max-height: 10px;
+}
 
 
 nav{
     
 
 }
+
 
 
 ul {
@@ -57,4 +70,8 @@ img{
 #juoma{
     max-width: 300px;
     max-height: 300px;
+}
+footer{
+    text-align: center;
+    background-color: dimgrey;
 }

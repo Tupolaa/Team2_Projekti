@@ -1,0 +1,40 @@
+header h1{
+
+}
+body{
+    
+}
+
+nav{
+    
+
+}
+
+
+ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 1em;
+            overflow: hidden;
+            background-color: rgb(253, 251, 251);
+            text-decoration: none;
+}
+
+
+li {
+    list-style-type: none;   
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            display: inline;
+            margin-left: 10px;
+}
+
+li :hover{
+    color: rgb(227, 161, 81);
+    text-decoration: none;
+}
+
+
+
