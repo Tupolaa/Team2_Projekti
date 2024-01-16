@@ -14,7 +14,9 @@
 
  ### Laura
  - Suunnittelin layouttia figmalla
- - Tein styles.css tiedoston ja aloitin ulkoasun muokkaamista 
+ - Tein styles.css tiedoston ja aloitin ulkoasun muokkaamista
+ - Suunnittelin etusivun layoutin loppuun 
+ - Muokkasin ja latailin tarpeellisia kuvia  
 
  ### Ada
  - 
