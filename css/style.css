@@ -39,7 +39,7 @@ li {
 
 li :hover{
     color: rgb(227, 161, 81);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
