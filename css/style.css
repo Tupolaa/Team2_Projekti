@@ -7,22 +7,21 @@ body{
 }
 
 header{
+    display: flex;
     text-align: left;
+   
 }
-article{
-    background-color: black;
-    text-align: center;
-    padding: 100px;
-    
+
+img#logo1{
+    flex: 1;
+    max-width: 80px;
+    max-height: 80px;
 }
-article p{
-    color: aliceblue;
-    margin: 5px;
+header h1{
+    flex-grow: 1;
 }
-img.logo1{
-    max-width: 10px;
-    max-height: 10px;
-}
+
+
 
 
 nav{
@@ -58,19 +57,24 @@ li :hover{
 }
 
 
-h1{
 
-}
 
 img{
     margin: auto;
     opacity: 0.6;
 
 }
-#juoma{
-    max-width: 300px;
-    max-height: 300px;
+article{
+    background-color: black;
+    text-align: center;
+    padding: 100px;
+    
 }
+article p{
+    color: aliceblue;
+    margin: 5px;
+}
+
 footer{
     text-align: center;
     background-color: dimgrey;
