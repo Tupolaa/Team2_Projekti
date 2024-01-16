@@ -7,12 +7,14 @@ body{
 }
 
 header{
-    text-align: center;  
+    text-align: left;
 }
 
 
 
+
 nav{
+    
 
 }
 
@@ -51,4 +53,8 @@ img{
     margin: auto;
     opacity: 0.6;
 
+}
+#juoma{
+    max-width: 300px;
+    max-height: 300px;
 }
