@@ -118,9 +118,9 @@ footer{
 .slider-frame{
     flex: 2;
     overflow: hidden;
-    height: 800px;
-    width: 1200px;
-    margin-left: 360px;
+    height: 1000px;
+    width: 2500px;
+    margin-left: 0px;
     margin-top: 20px;
 }
 
