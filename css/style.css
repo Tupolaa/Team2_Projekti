@@ -93,6 +93,22 @@ footer{
     text-align: center;
    
 }
+.juomat{
+    text-align: center;
+
+}
+.juomak{
+    display: flex;
+    flex: 1;
+
+
+}
+#batteryt{
+    max-width: 200px;
+    max-height: 200px;
+  
+
+}
 /* -------------SLIDE SHOW   */
 
 
