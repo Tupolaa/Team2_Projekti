@@ -1,5 +1,6 @@
 a{
     color: rgb(3, 3, 3);
+    text-decoration: none;
 }
 
 body{
@@ -155,3 +156,22 @@ footer{
     position: relative;
     float: left;
 }
+
+
+
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: dimgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: radial-gradient(rgba(255, 136, 182, 0.8), dimgray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: radial-gradient(rgb(255, 136, 182, 1), dimgray);
+  }
