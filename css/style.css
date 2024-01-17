@@ -153,8 +153,8 @@ footer{
 }
 
 .slide-images{
-    width: 3600px;
-    height: 800px;
+    width: 4000px;
+    height: 1000px;
     margin: 0 0 0 -2400px;
     position: relative;
     -webkit-animation-name: slide_animation;
