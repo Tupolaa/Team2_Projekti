@@ -1,7 +1,38 @@
-header h1{
-
+a{
+    color: rgb(3, 3, 3);
+    text-decoration: none;
 }
+
 body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    padding: 0;
+    margin: 0;
+    background-color: dimgray;
+}
+
+
+header{
+    display: flex;
+    text-align: left;
+   
+}
+
+img#logo1{
+    flex: 1;
+    max-width: 80px;
+    max-height: 80px;
+}
+header h1{
+    flex-grow: 1;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    padding: 0;
+    margin: 0;
+    background-color: dimgray;
     
 }
 
@@ -16,7 +47,7 @@ ul {
             margin: 0;
             padding: 1em;
             overflow: hidden;
-            background-color: rgb(253, 251, 251);
+           
             text-decoration: none;
 }
 
