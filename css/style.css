@@ -115,82 +115,44 @@ footer{
 /* -------------SLIDE SHOW   */
 
 
-.slider-frame{
-    flex: 2;
+  
+
+ 
+.wrapper {
+    width: 100%;
+    height: 80vh;
     overflow: hidden;
-    height: 1000px;
-    width: 2500px;
-    margin-left: 0px;
-    margin-top: 20px;
-}
-
-@keyframes slide_animation{
-    0% {left:0px;}
-    10% {left:0px;}
-    20% {left:1200px;}
-    30% {left:1200px;}
-    40% {left: 2400px;}
-    50% {left: 2400px;}
-    60% {left: 1200px;}
-    70% {left: 1200px;}
-    80% {left: 0px;}
-    90% {left: 0px;}
-    100% {left:0px;}
-}
-
-@-webkit-keyframes slide_animation{
-    0% {left:0px;}
-    10% {left:0px;}
-    20% {left:1200px;}
-    30% {left:1200px;}
-    40% {left: 2400px;}
-    50% {left: 2400px;}
-    60% {left: 1200px;}
-    70% {left: 1200px;}
-    80% {left: 0px;}
-    90% {left: 0px;}
-    100% {left:0px;}
-}
-
-.slide-images{
-    width: 4000px;
-    height: 1000px;
-    margin: 0 0 0 -2400px;
     position: relative;
-    -webkit-animation-name: slide_animation;
-    animation-name: slide_animation;
-    -webkit-animation-duration: 33s;
-    animation-duration: 33s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
-    -webkit-animation-play-state: running;
-    animation-play-state: running;
+    background-color: #000;
+}
+.wrapper>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: animate 15s infinite;
+    opacity: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.wrapper>div:nth-child(2) {
+    animation-delay: 5s;
+}
+.wrapper>div:nth-child(3) {
+    animation-delay: 10s;
 }
 
-.img-container{
-    height: 800px;
-    width: 1200px;
-    position: relative;
-    float: left;
+@keyframes animate {
+    10% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    40% {
+        transform: scale(1);
+    }
 }
-
-
-
-
-::-webkit-scrollbar {
-  width: 0.5em;
-}
-
-::-webkit-scrollbar-track {
-  background: dimgray;
-}
-
-::-webkit-scrollbar-thumb {
-  background-image: radial-gradient(rgba(255, 136, 182, 0.8), dimgray);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-image: radial-gradient(rgb(255, 136, 182, 1), dimgray);
-  }
