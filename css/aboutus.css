@@ -1,5 +1,5 @@
 a{
-    color: rgb(253, 252, 252);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -30,6 +30,7 @@ img#logo1{
 header h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
+    font-family: "Audiowide", sans-serif;
     margin-top: 8px;
     flex-grow: 1;
 }
@@ -75,9 +76,18 @@ text-decoration: none;
     margin-bottom: 2px;
     color: white;
 }
+#fontti{
+    font-family: "Trirong", serif;
+    font-weight: bold;
+}
 
 
 
+img#team{
+    height: 700px;
+    weight: auto;
+    
+}
 
 article{
     text-align: center;
