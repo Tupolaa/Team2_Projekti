@@ -19,11 +19,16 @@ header{
 }
 
 img#logo1{
+    margin-left: 200px;
+    margin-bottom: 50px;
     flex: 1;
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 70px;
+    max-height: 70px;
 }
 header h1{
+    font-family: "Audiowide", sans-serif;
+    font-weight: bold;
+    margin-top: 8px;
     flex-grow: 1;
 }
 
@@ -36,10 +41,18 @@ section.Kuvat{
     flex-grow: 2;
 
 }
+#fontti{
+    font-family: "Trirong", serif;
+    font-weight: bold;
+}
+
+
 
 
 
 nav{
+    margin-left: 200px;
+
     
 
 }
@@ -87,6 +100,7 @@ article{
 article p{
     color: aliceblue;
     margin: 5px;
+    font-size: 25px;
 }
 
 footer{
