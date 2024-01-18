@@ -1,3 +1,7 @@
+#fontti{
+    font-family: "Trirong", serif;
+    font-weight: bold;
+}
 a{
     color: rgb(3, 3, 3);
     text-decoration: none;
@@ -10,9 +14,37 @@ body{
     margin: 0;
     background-color: dimgray;
 }
-#fontti{
-    font-family: "Trirong", serif;
+main{
+    display: flex;
+    
+    justify-content: center;
+    background-image: url('/Team2_Projekti/images/backround.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#kuva{
+    flex: 1;
+    margin-left: 200px;
+}
+.teksti{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
     font-weight: bold;
+    text-align: center;
+    border:  5px solid #333;
+    margin-left: 250px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    margin-right: 100px;
+    flex-grow: 2;
+
+}
+.tölkki1{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    max-height: 400px;
+    max-width: 400px;
 }
 
 
@@ -35,13 +67,13 @@ header h1{
     margin-top: 8px;
     flex-grow: 1;
 }
-
-
 nav{
     margin-left: 200px;
+
     
 
 }
+
 
 
 ul {
@@ -49,7 +81,7 @@ ul {
             margin: 0;
             padding: 1em;
             overflow: hidden;
-           
+        
             text-decoration: none;
 }
 
@@ -68,32 +100,8 @@ li :hover{
     color: rgb(227, 161, 81);
     text-decoration: none;
 }
-.kuvia{
-    display: flex;
-    margin: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    background-image: url('/Team2_Projekti/images/backround.jpg');
-    background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.batteryt{
-    max-width: 350px;
-    max-height: 400px;
-    
-}
-.tölkki1{
-    margin-top: 70px;
-    margin-left: 50px;
-    margin-right: 50px;
-    max-width: 500px;
-    max-height: 300px;
-}
 footer{
+    margin-top: 50px;
     text-align: center;
    
 }
-
-

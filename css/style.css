@@ -110,6 +110,10 @@ footer{
 .juomat{
    
     text-align: center;
+    background-image: url('/Team2_Projekti/images/backround.jpg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 
 }
 
