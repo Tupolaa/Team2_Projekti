@@ -31,14 +31,7 @@ header h1{
     flex-grow: 1;
 }
 
-body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
-    padding: 0;
-    margin: 0;
-    background-color: dimgray;
-    
-}
+
 
 nav{
     margin-left: 200px;
@@ -70,6 +63,24 @@ li {
 li :hover{
     color: rgb(227, 161, 81);
     text-decoration: none;
+}
+.kuvia{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    background-image: url('/Team2_Projekti/images/backround.jpg');
+}
+.batteryt{
+    max-width: 350px;
+    max-height: 400px;
+}
+.tölkki1{
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+    max-width: 500px;
+    max-height: 300px;
 }
 
 

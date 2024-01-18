@@ -13,6 +13,7 @@
  - Tein sivu1.html ja tein sille pohjan
  - Parantelin index.html sivun html koodia
  - tein toimivan slideshown index.html sivulle, sekä tarvittavat muutokset styles.css tiedostoon
+ - viimeistelin index.html sivua
 
  ### Laura
  - Suunnittelin layouttia figmalla
