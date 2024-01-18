@@ -1,11 +1,12 @@
+
 a{
     color: rgb(3, 3, 3);
     text-decoration: none;
 }
 
+
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
     padding: 0;
     margin: 0;
     background-color: dimgray;
@@ -41,6 +42,9 @@ section.Kuvat{
     flex-grow: 2;
 
 }
+
+
+
 #fontti{
     font-family: "Trirong", serif;
     font-weight: bold;
@@ -52,8 +56,6 @@ section.Kuvat{
 
 nav{
     margin-left: 200px;
-
-    
 
 }
 
@@ -80,7 +82,7 @@ li {
 }
 
 li :hover{
-    color: rgb(227, 161, 81);
+    color: rgb(215, 207, 197);
     text-decoration: none;
 }
 
