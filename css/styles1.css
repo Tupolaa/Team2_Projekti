@@ -19,11 +19,15 @@ header{
 }
 
 img#logo1{
+    margin-left: 200px;
     flex: 1;
     max-width: 80px;
     max-height: 80px;
 }
 header h1{
+    margin-top: 12px;
+    font-family: "Audiowide", sans-serif;
+    font-weight: bold;
     flex-grow: 1;
 }
 
@@ -37,6 +41,7 @@ body{
 }
 
 nav{
+    margin-left: 200px;
     
 
 }
