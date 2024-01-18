@@ -174,3 +174,9 @@ footer{
         transform: scale(1);
     }
 }
+@media (max-width: 768px) {
+    .wrapper {
+        margin-left: 5%; /* Adjust margin for smaller screens */
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+}
