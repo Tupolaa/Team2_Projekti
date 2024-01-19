@@ -15,6 +15,8 @@
  - tein toimivan slideshown index.html sivulle, sekä tarvittavat muutokset styles.css tiedostoon
  - viimeistelin index.html sivua
  - Tein products kansion ja sinne Juomille omat sivut, sekä päivitin index.html, products.html ja aboutus.html sivuja ja niiden css tiedostoja
+ - Tein bugfixejä kaikkiin sivuihin ja lisäsin kuvan products.html sivulle.
+ 
 
  ### Laura
  - Suunnittelin layouttia figmalla
