@@ -25,6 +25,7 @@
  - tein css tiedoston aboutus sivulle 
  - muokkasin css tiedoston layoutin aboutus sivulle
  - Tein figmalla lopullisen layoutin etusivulle ja products sivulle
+ - Päivitin etusivun slideshown kuvat
 
 
  ### Ada
