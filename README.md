@@ -22,6 +22,10 @@
  - Suunnittelin etusivun layoutin loppuun 
  - Muokkasin ja latailin tarpeellisia kuvia  
  - tein aboutus.html sivun
+ - tein css tiedoston aboutus sivulle 
+ - muokkasin css tiedoston layoutin aboutus sivulle
+ - Tein figmalla lopullisen layoutin etusivulle ja products sivulle
+
 
  ### Ada
  - 
