@@ -5,7 +5,7 @@
  
  ## Meidän nettisivu
 
- [Linkki]
+ [https://tupolaa.github.io/Team2_Projekti/]
 
  ### Teemu
  - Tein repon ja tiedostot repoon.

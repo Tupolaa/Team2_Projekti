@@ -29,7 +29,7 @@ main{
 }
 .teksti{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     text-align: center;
     border:  5px solid #333;
@@ -67,6 +67,12 @@ header h1{
     margin-top: 8px;
     flex-grow: 1;
 }
+h2{
+    font-family: "Audiowide", sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+
+}
 nav{
     margin-left: 200px;
 
@@ -101,6 +107,8 @@ li :hover{
     text-decoration: none;
 }
 footer{
+    font-family: "Trirong", serif;
+    font-weight: bold;
     margin-top: 50px;
     text-align: center;
    
