@@ -94,7 +94,9 @@ article{
     text-align: center;
 }
 footer{
-    margin-top: 5px;
+    font-family: "Trirong", serif;
+    font-weight: bold;
+    margin-top: 50px;
     text-align: center;
 }
 

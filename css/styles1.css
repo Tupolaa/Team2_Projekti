@@ -92,6 +92,10 @@ li :hover{
     max-height: 300px;
 }
 footer{
+    
+    font-family: "Trirong", serif;
+    font-weight: bold;
+    margin-top: 50px;
     text-align: center;
    
 }
