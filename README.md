@@ -31,4 +31,5 @@
 
 
  ### Ada
- - 
+ - Tein Contact sivun
+ - Tein css/ulkoasut sille
