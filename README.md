@@ -7,6 +7,10 @@
 
  [https://tupolaa.github.io/Team2_Projekti/]
 
+ ##
+
+ [https://www.figma.com/file/OxXi0yPS7dWOrZcLe1F9nD/Projektity%C3%B6-Team2?type=design&node-id=0%3A1&mode=design&t=tLMXQTibWKk5UY4M-1]
+
  ### Teemu
  - Tein repon ja tiedostot repoon.
  - tein pohjan index.hml tiedostoon
