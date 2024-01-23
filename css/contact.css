@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    color: rgb(3, 3, 3);
+    text-decoration: none;
+}
+
 
 body {
     background-color: dimgray;
@@ -13,6 +18,10 @@ nav{
     
 
 }
+#fontti{
+    font-family: "Trirong", serif;
+    font-weight: bold;
+}
 
 ul {
     list-style-type: none;
@@ -20,6 +29,13 @@ ul {
     padding: 1em;
     overflow: hidden;
     text-decoration: none;
+}
+footer{
+    font-family: "Trirong", serif;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+   
 }
 
 li {
@@ -32,10 +48,7 @@ li {
     margin-left: 10px;
 }
 
-li a {
-    text-decoration: none;
-    color: #fff;
-}
+
 
 li :hover{
     color: rgb(215, 207, 197);
@@ -54,16 +67,16 @@ header a {
 
 img#logo1{
     margin-left: 200px;
-    margin-bottom: 5px;
+    margin-bottom: 50px;
     flex: 1;
     max-width: 70px;
     max-height: 70px;
 }
-
 header h1{
     font-family: "Audiowide", sans-serif;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 8px;
+    font-size: 40px;
     flex-grow: 1;
 }
 
