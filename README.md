@@ -35,6 +35,7 @@
  - Tein figmalla lopullisen layoutin etusivulle ja products sivulle
  - Päivitin etusivun slideshown kuvat
  - Muokkasin ulkoasun yhteneväiseksi
+ - Validatoin kaikki sivut vielä
 
 
  ### Ada
