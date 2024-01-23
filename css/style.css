@@ -1,6 +1,6 @@
 
 a{
-    color: rgb(3, 3, 3);
+    color: rgb(253, 253, 253);
     text-decoration: none;
 }
 
@@ -9,7 +9,7 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 0;
     margin: 0;
-    background-color: dimgray;
+    background-color: #201f1f;
 }
 
 
@@ -28,6 +28,7 @@ img#logo1{
 }
 header h1{
     font-family: "Audiowide", sans-serif;
+    color: rgb(254, 254, 254);
     font-weight: bold;
     margin-top: 8px;
     flex-grow: 1;
@@ -107,17 +108,18 @@ img{
 
 footer{
     font-family: "Trirong", serif;
+    color: #ffffff;
     font-weight: bold;
     margin-top: 50px;
     text-align: center;
    
 }
 .juomat{
-    
+    color: rgb(255, 255, 255);
     font-family: "Trirong", serif;
     font-weight: bold;
     text-align: center;
-    background-image: url('/Team2_Projekti/images/backround.jpg');
+    background-image: url('/images/taustajuomille.png');
     background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -152,7 +154,7 @@ footer{
     height: 90vh;
     overflow: hidden;
     position: relative;
-    background-color: #000;
+    background-color: #201f1f;
 }
 .wrapper>div {
     width: 100%;
