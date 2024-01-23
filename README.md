@@ -16,6 +16,8 @@
  - viimeistelin index.html sivua
  - Tein products kansion ja sinne Juomille omat sivut, sekä päivitin index.html, products.html ja aboutus.html sivuja ja niiden css tiedostoja
  - Tein bugfixejä kaikkiin sivuihin ja lisäsin kuvan products.html sivulle.
+ - Tein bugfixejä lisää muutoksiin 
+ - Lisäsin sivun shell.hamk.fi
  
 
  ### Laura
@@ -28,6 +30,7 @@
  - muokkasin css tiedoston layoutin aboutus sivulle
  - Tein figmalla lopullisen layoutin etusivulle ja products sivulle
  - Päivitin etusivun slideshown kuvat
+ - Muokkasin ulkoasun yhteneväiseksi
 
 
  ### Ada
