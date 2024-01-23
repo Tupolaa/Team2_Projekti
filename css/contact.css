@@ -3,13 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-a{
-    color: #fff;
-    text-decoration: none;
-}
 
 body {
     background-color: #201f1f;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
 }
 
 nav{

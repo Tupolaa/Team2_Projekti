@@ -39,5 +39,9 @@
 
 
  ### Ada
- - Tein Contact sivun
+ - Tein contact.html sivun
  - Tein css/ulkoasut sille
+ - Muokkasin sivun ulkoasua ja tein siitä responsiivisen
+ - Tein koodiin kommentit
+ - Validatoin html ja css sivut
+ - 
