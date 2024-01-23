@@ -75,7 +75,7 @@ li :hover{
     flex-wrap: wrap;
     justify-content: center;
     
-    background-image: url('/images/taustajuomille.png');
+    background-image: url('../images/taustajuomille.png');
     background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
