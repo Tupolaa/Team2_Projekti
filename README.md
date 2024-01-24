@@ -44,4 +44,6 @@
  - Muokkasin sivun ulkoasua ja tein siitä responsiivisen
  - Tein koodiin kommentit
  - Validatoin html ja css sivut
- - 
+ - Parantelin footerin valmiiksi
+ - Muokkasin vielä navia ja headeria responsiivisemmaksi
+ - Tein pieniä korjailuita sielä sun täällä 

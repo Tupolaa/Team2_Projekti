@@ -8,67 +8,43 @@ body {
     background-color: #201f1f;
 }
 
-a{
-    color: #fff;
-    text-decoration: none;
-}
-
-nav{
-    margin-left: 200px;
-    
-
-}
 #fontti{
     font-family: "Trirong", serif;
     font-weight: bold;
 }
 
-nav ul {
+
+nav{
+    background-color:#201f1f;
+    height: 50px;
+    width: 100%;
+}
+
+nav ul li {
     list-style-type: none;
-    margin: 0;
-    padding: 1em;
-    overflow: hidden;
-    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding-right: 20px;
 }
 
-nav li {
-    list-style-type: none;   
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    display: inline;
-    margin-left: 10px;
+nav ul {
+    float: right;
+    padding-top: 10px;
 }
 
-nav li :hover{
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+
+}
+nav ul li a:hover {
     color: rgb(215, 207, 197);
-    text-decoration: none;
 }
 
-header{
-    display: flex;
-    text-align: left;  
-}
-
-header a {
-    color: black;
-    text-decoration: none;
-}
-
-img#logo1{
-    margin-left: 200px;
-    margin-bottom: 50px;
-    flex: 1;
-    max-width: 70px;
-    max-height: 70px;
-}
-header h1{
-    font-family: "Audiowide", sans-serif;
-    font-weight: bold;
-    margin-top: 8px;
-    font-size: 40px;
-    flex-grow: 1;
+header img#logo1{
+    position: absolute;
+    left: 20px;
+    max-width: 200px;
 }
 
 .contact {
@@ -317,5 +293,9 @@ footer{
 @media (max-width: 574px){
     .footer-col {
         width: 100%;
+    }
+    header img#logo1 {
+        width: 150px;
+        padding-top: 10px;
     }
 }
