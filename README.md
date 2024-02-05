@@ -12,7 +12,7 @@
  [https://www.figma.com/file/OxXi0yPS7dWOrZcLe1F9nD/Projektity%C3%B6-Team2?type=design&node-id=0%3A1&mode=design&t=tLMXQTibWKk5UY4M-1]
 
  ##
-SHell.hamk.fi
+Shell.hamk.fi
 
  [http://shell.hamk.fi/~trtkp23_2/projekti/team2/Team2_Projekti/index.html]
 
