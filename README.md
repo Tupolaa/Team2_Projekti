@@ -52,3 +52,4 @@ SHell.hamk.fi
  - Parantelin footerin valmiiksi
  - Muokkasin vielä navia ja headeria responsiivisemmaksi
  - Tein pieniä korjailuita sielä sun täällä 
+ - Lisäsin kaikille sivuille footerin

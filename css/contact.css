@@ -125,6 +125,7 @@ header img#logo1{
     width: 40%;
     padding: 40px;
     background: #fff;
+    border-radius: 2%;
 }
 
 .contactForm h2 {
@@ -179,6 +180,7 @@ header img#logo1{
     cursor: pointer;
     padding: 10px;
     font-size: 18px;
+    border-radius: 6%;
 }
 
 .footcont {
@@ -220,7 +222,7 @@ footer{
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color:  rgb(224, 145, 48);
+    background-color:  rgb(179, 173, 165);
     height: 2px;
     box-sizing: border-box;
     width: 50px;
