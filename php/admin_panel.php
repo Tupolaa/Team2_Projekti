@@ -1,12 +1,12 @@
-<?php
+<!-- <?php 
 // Tarkista, onko käyttäjä kirjautunut sisään
-session_start();
-if (!isset($_SESSION["admin"])) {
-    // Ohjaa kirjautumissivulle, jos käyttäjä ei ole kirjautunut
-    header("Location: index.html");
-    exit();
-}
-?>
+// session_start();
+// if (!isset($_SESSION["admin"])) {
+//     // Ohjaa kirjautumissivulle, jos käyttäjä ei ole kirjautunut
+//     header("Location: index.html");
+//     exit();
+// }
+// ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,5 +18,5 @@ if (!isset($_SESSION["admin"])) {
 <body>
     <h2>Tervetuloa!</h2>
     <!-- Admin-sivun sisältö tähän -->
-</body>
-</html>
+<!-- </body>
+</html> --> 
