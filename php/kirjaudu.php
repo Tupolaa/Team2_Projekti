@@ -1,58 +1,65 @@
 <?php
 session_start();
-$json=isset($_POST["user"]) ? $_POST["user"] : "";
+$json = isset($_POST["user"]) ? $_POST["user"] : "";
 
-if (!($user=tarkistaJson($json))){
+if (!($user = tarkistaJson($json))) {
     print "Täytä kaikki kentät";
     exit;
 }
 
-mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
-// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+include("./connect.php");
 
-try{
-    $yhteys=mysqli_connect("db", "pena", "kukkuu", "kalakanta");
-}
-catch(Exception $e){
-    print "Yhteysvirhe";
-    exit;
-}
-
-//Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
-//joihin laitetaan muuttujien arvoja
-$sql="select * from kayttaja where tunnus=? and salasana=SHA2(?, 256)";
-try{
-    //Valmistellaan sql-lause
-    $stmt=mysqli_prepare($yhteys, $sql);
-    //Sijoitetaan muuttujat oikeisiin paikkoihin
-    mysqli_stmt_bind_param($stmt, 'ss', $user->tunnus, $user->salasana);
-    //Suoritetaan sql-lause
+// Prepare SQL query
+$sql = "SELECT * FROM Tunnukset WHERE Tunnus=? AND Salasana=SHA2(?, 256)";
+try {
+    // Prepare SQL statement
+    $stmt = mysqli_prepare($conn, $sql);
+    if (!$stmt) {
+        throw new Exception(mysqli_error($conn));
+    }
+    
+    // Bind parameters
+    mysqli_stmt_bind_param($stmt, 'ss', $user->Tunnus, $user->Salasana);
+    
+    // Execute SQL statement
     mysqli_stmt_execute($stmt);
-    //Koska luetaan prepared statementilla, tulos haetaan
-    //metodilla mysqli_stmt_get_result($stmt);
-    $tulos=mysqli_stmt_get_result($stmt);
-    if ($rivi=mysqli_fetch_object($tulos)){
-        $_SESSION["kayttaja"]="$rivi->tunnus";
+    
+    // Get result
+    $result = mysqli_stmt_get_result($stmt);
+    
+    // Check if there are any rows returned
+    if (mysqli_num_rows($result) > 0) {
+        // Fetch the first row
+        $row = mysqli_fetch_object($result);
+        
+        // Store user information in session
+        $_SESSION["kayttaja"] = $row->Tunnus;
+        
+        // Print "ok" as a success message
         print "ok";
         exit;
+    } else {
+        // Print an error message if no rows are returned
+        print "Käyttäjätunnus tai salasana on väärä.";
+        exit;
     }
-    //Suljetaan tietokantayhteys
-    mysqli_close($yhteys);
-    print $json;
-}
-catch(Exception $e){
+} catch (Exception $e) {
+    // Print error message if an exception occurs
     print "Jokin virhe!";
+} finally {
+    // Close the database connection
+    mysqli_close($conn);
 }
+
 ?>
 
-
 <?php
-function tarkistaJson($json){
-    if (empty($json)){
+function tarkistaJson($json) {
+    if (empty($json)) {
         return false;
     }
-    $user=json_decode($json, false);
-    if (empty($user->tunnus) || empty($user->salasana)){
+    $user = json_decode($json);
+    if (empty($user->Tunnus) || empty($user->Salasana)) {
         return false;
     }
     return $user;

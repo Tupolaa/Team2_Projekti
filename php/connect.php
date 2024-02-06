@@ -5,7 +5,7 @@ try{
     $conn=mysqli_connect($initials["palvelin"], $initials["tunnus"], $initials["pass"], $initials["db"]);
 }
 catch(Exception $e){
-    header("Location:../yhteysvirhe.html");
+    header("Location:../html/virhe.html");
     exit;
 }
 ?>
