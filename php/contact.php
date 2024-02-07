@@ -2,18 +2,18 @@
 include("connect.php");
 
 // Read form data
-$name = isset($_POST["Name"]) ? trim($_POST["Name"]) : "";
-$email = isset($_POST["Email"]) ? trim($_POST["Email"]) : "";
-$message = isset($_POST["Viesti"]) ? trim($_POST["Viesti"]) : "";
+$Nimi = isset($_POST["Nimi"]) ? trim($_POST["Nimi"]) : "";
+$Sposti = isset($_POST["Sposti"]) ? trim($_POST["Sposti"]) : "";
+$Viesti = isset($_POST["MSG"]) ? trim($_POST["MSG"]) : "";
 
 // Redirect back to the form if necessary data is not provided
-if (empty($name) || empty($email)){
+if (empty($Nimi) || empty($Sposti)){
     header("Location:../html/contact.html");
     exit;
 }
 
 // Prepare SQL query
-$sql = "INSERT INTO Contact (Nimi, SPosti, Viesti) VALUES (?, ?, ?)";
+$sql = "INSERT INTO Contact (Name, Email, Message) VALUES (?, ?, ?)";
 
 // Prepare the statement
 $stmt = mysqli_prepare($conn, $sql);
@@ -22,7 +22,7 @@ if ($stmt === false) {
 }
 
 // Bind parameters
-mysqli_stmt_bind_param($stmt, 'sss', $name, $email, $message);
+mysqli_stmt_bind_param($stmt, 'sss', $Nimi, $Sposti, $Viesti);
 
 // Execute the statement
 $result = mysqli_stmt_execute($stmt);
