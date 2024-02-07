@@ -22,10 +22,6 @@ if (empty($name) || empty($email)){
     exit;
 }
 
-else {
-    
-}
-
 //Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
 //joihin laitetaan muuttujien arvoja
 $sql="insert into contact (Full Name, Email, Message) values(?, ?)";
