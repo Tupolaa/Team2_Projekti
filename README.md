@@ -5,7 +5,7 @@
  
  ## Meidän nettisivu
 
- [https://tupolaa.github.io/Team2_Projekti/]
+ [https://tupolaa.github.io/Team2_Projekti/html/index.html]
 
  ##
 
