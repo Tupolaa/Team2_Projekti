@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION["kayttaja"])){
+    header("Location:../html/kirjaudu.html");
+    exit;
+}
 include("./connect.php");
 
 $tulos = mysqli_query($conn, "SELECT * FROM Contact");
