@@ -1,40 +1,39 @@
-
 <?php
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-try{
-    $yhteys=mysqli_connect("db", "Ryhmatyo", "root", "password");
-}
-catch(Exception $e){
-    header("Location:../html/yhteysvirhe.html");
-    exit;
-}
+include("connect.php");
 
-//Luetaan lomakkeelta tulleet tiedot funktiolla $_POST
-//jos syötteet ovat olemassa
-$name=isset($_POST["name"]) ? $_POST["name"] : "";
-$email=isset($_POST["email"]) ? $_POST["email"] : "";
-$message=isset($_POST["message"]) ? $_POST["message"] : "";
+// Read form data
+$name = isset($_POST["Name"]) ? trim($_POST["Name"]) : "";
+$email = isset($_POST["Email"]) ? trim($_POST["Email"]) : "";
+$message = isset($_POST["Viesti"]) ? trim($_POST["Viesti"]) : "";
 
-//Jos ei jompaa kumpaa tai kumpaakaan tietoa ole annettu
-//ohjataan pyyntö takaisin lomakkeelle
+// Redirect back to the form if necessary data is not provided
 if (empty($name) || empty($email)){
     header("Location:../html/contact.html");
     exit;
 }
 
-//Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
-//joihin laitetaan muuttujien arvoja
-$sql="insert into contact (Name, Email, Message) values(?, ?, ?)";
+// Prepare SQL query
+$sql = "INSERT INTO Contact (Nimi, SPosti, Viesti) VALUES (?, ?, ?)";
 
-//Valmistellaan sql-lause
-$stmt=mysqli_prepare($yhteys, $sql);
-//Sijoitetaan muuttujat oikeisiin paikkoihin
+// Prepare the statement
+$stmt = mysqli_prepare($conn, $sql);
+if ($stmt === false) {
+    die("Error: " . mysqli_error($conn));
+}
+
+// Bind parameters
 mysqli_stmt_bind_param($stmt, 'sss', $name, $email, $message);
-//Suoritetaan sql-lause
-mysqli_stmt_execute($stmt);
-//Suljetaan tietokantayhteys
-mysqli_close($yhteys);
 
-header("location:../html/index.html");
+// Execute the statement
+$result = mysqli_stmt_execute($stmt);
+if ($result === false) {
+    die("Error: " . mysqli_error($conn));
+} 
+
+// Close the connection
+mysqli_close($conn);
+
+// Redirect to the index page
+header("Location:../html/index.html");
 exit;
 ?>
