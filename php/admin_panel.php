@@ -4,8 +4,6 @@ if (!isset($_SESSION["kayttaja"])){
     header("Location:../html/kirjaudu.html");
     exit;
 }
-include ("../html/header.html");
 include ("../html/admin.html");
-include ("../html/footer.html");
 
 ?>
