@@ -35,6 +35,12 @@ try {
         // Store user information in session
         $_SESSION["kayttaja"] = $row->Tunnus;
         
+        $username = $row->Tunnus;
+        $logSql = "INSERT INTO LoginLogs (Name) VALUES (?)";
+        $logStmt = mysqli_prepare($conn, $logSql);
+        mysqli_stmt_bind_param($logStmt, 's', $username);
+        mysqli_stmt_execute($logStmt);
+
         // Print "ok" as a success message
         print "ok";
         exit;

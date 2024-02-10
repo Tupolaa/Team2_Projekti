@@ -33,11 +33,30 @@ if (!isset($_SESSION["kayttaja"])){
         }
         
     </script>
+
+<script>
+        function ReadLogin() {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    json = this.responseText;
+                    document.getElementById("Logjson").innerHTML = json;
+                    Contacts = JSON.parse(json);
+                  
+                }
+            };
+            xmlhttp.open("GET", "../php/Tulosta_login.php", true);
+            xmlhttp.send();
+        }
+        
+    </script>
     
     <button onclick='ReadContacts();'>Contacts</button>
     <p id='contactjson'>
         Tulos tähän
     </p>
+    <button onclick='ReadLogin();'>Login</button>
+    <p id='Logjson'>
     
     
     
