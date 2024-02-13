@@ -7,7 +7,24 @@
     <title>Admin Page</title>
 </head>
 <body>
-    <a href='kirjauduulos.php'>Kirjaudu ulos</a>
+
+<div class="topnav">
+    <ul id="fontti">
+        <li><a href="kijauduulos.php">KIRJAUDU ULOS</a></li>
+      
+    </ul>
+</div>
+
+
+<div class="content">
+
+    <nav>
+        <button onclick='ReadContacts();'>Contacts</button>
+    <p id='contactjson'>
+        Tulos tähän
+    </p>
+    </nav>
+
     <script>
         function ReadContacts() {
             xmlhttp = new XMLHttpRequest();
@@ -25,14 +42,15 @@
         
     </script>
     
-    <button onclick='ReadContacts();'>Contacts</button>
-    <p id='contactjson'>
-        Tulos tähän
-    </p>
-    
-    
-    
+</div>
 
+<div class="sidenav">
+    <a href="https://www.google.com/intl/fi/gmail/about/">ANSWER</a>
+  </div>
 
+  <div class="footer">
+    <li><a href="../html/index.html">MAIN PAGE</a></li>
+</div>
+    
 </body>
 </html>
