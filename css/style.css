@@ -267,10 +267,19 @@ footer{
 }
 
 
+@media (max-width: 767px){
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
 
-@media (max-width: 768px) {
-    .wrapper {
-        margin-left: 5%; /* Adjust margin for smaller screens */
-        width: 90%; /* Adjust the width for smaller screens */
+@media (max-width: 574px){
+    .footer-col {
+        width: 100%;
+    }
+    header img#logo1 {
+        width: 150px;
+        padding-top: 10px;
     }
 }

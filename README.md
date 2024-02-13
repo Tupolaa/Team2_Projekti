@@ -5,7 +5,7 @@
  
  ## Meidän nettisivu
 
- [https://tupolaa.github.io/Team2_Projekti/]
+ [https://tupolaa.github.io/Team2_Projekti/html/index.html]
 
  ##
 
@@ -27,6 +27,10 @@ Shell.hamk.fi
  - Tein bugfixejä kaikkiin sivuihin ja lisäsin kuvan products.html sivulle.
  - Tein bugfixejä lisää muutoksiin 
  - Lisäsin sivun shell.hamk.fi
+ - Tein uusia php sivuja, sekä Loin yhteyden MySql tietokantaan php koodilla
+ - Korjasin kirjaumis sivun, jotta se toimi ja kirjautuiminen onnistui
+ - Loin php tiedoston joka lukee tietokannasta Contact formin syötteet ja tulostaa ne
+ - Tein Kirjautumis login Tietokantaan josta näkee kuka on kirjautunut ja milloin
  
 
  ### Laura

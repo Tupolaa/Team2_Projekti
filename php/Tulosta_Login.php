@@ -6,9 +6,9 @@ if (!isset($_SESSION["kayttaja"])){
 }
 include("./connect.php");
 
-$tulos = mysqli_query($conn, "SELECT * FROM Contact");
+$tulos = mysqli_query($conn, "SELECT * FROM LoginLogs");
 while ($rivi = mysqli_fetch_object($tulos)) {
-    echo "ID: " . $rivi->ID . ", Nimi: " . $rivi->Name . ", Sähköposti: " . $rivi->Email . ", Viesti: " . $rivi->Message . "<br>";
+    echo "ID: " . $rivi->id . ", Nimi: " . $rivi->Name . ", Aika: " . $rivi->loginTime . "<br>";
 }
 
 mysqli_close($conn);
