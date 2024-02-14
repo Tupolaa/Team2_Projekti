@@ -81,7 +81,7 @@ if (!isset($_SESSION["kayttaja"])){
   <div class="footer">
     <ul>
     <li><a href="../html/index.html">Main Page</a></li>
-    <li><a href="https://www.google.com/intl/fi/gmail/about/">Answer Email</a></li>
+    <li><a href='./email.php?vastaa=$rivi->id'>Answer Email</a></li>
     </ul>
 </div>
 
