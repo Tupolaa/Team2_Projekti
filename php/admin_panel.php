@@ -13,16 +13,17 @@ if (!isset($_SESSION["kayttaja"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/adminpanel.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
     <title>Admin Page</title>
     <style>
-        
+
     </style>
 </head>
 <body>
 
 <div class="topnav">
     <ul id="fontti">
-        <li><a href="kirjauduulos.php">KIRJAUDU ULOS</a></li>
+        <li><a href="kirjauduulos.php">Kirjaudu Ulos</a></li>
 
     </ul>
 </div>
@@ -31,16 +32,17 @@ if (!isset($_SESSION["kayttaja"])){
 <div class="content">
 
     <nav>
-        <button onclick='ReadContacts();'>Contacts</button>
-    <p id='contactjson'>
-        Tulos tähän
-    </p>
-    <button onclick='ReadLogin();'>Login</button>
-    <p id='Logjson'>
-        Tulosta tähän</p>
+            <button onclick='ReadContacts();'>Contacts</button>
+            <p id='contactjson'>
+            Tulosta tähän
+            </p>
+            
+    
+            <button onclick='ReadLogin();'>Logs</button>
+            <p id='Logjson'>
+            Tulosta tähän</p>
     </nav>
-
-    <script>
+<script>
         function ReadContacts() {
             xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
@@ -75,12 +77,12 @@ if (!isset($_SESSION["kayttaja"])){
 
 </div>
 
-<div class="sidenav">
-    <a href="https://www.google.com/intl/fi/gmail/about/">ANSWER</a>
-  </div>
 
   <div class="footer">
-    <li><a href="../html/index.html">MAIN PAGE</a></li>
+    <ul>
+    <li><a href="../html/index.html">Main Page</a></li>
+    <li><a href="https://www.google.com/intl/fi/gmail/about/">Answer Email</a></li>
+    </ul>
 </div>
 
 </body>
