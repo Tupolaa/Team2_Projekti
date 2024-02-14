@@ -4,8 +4,24 @@
 <meta charset="utf-8">
 <title>Kirjaudu</title>
 <link rel="stylesheet" href="../css/admin.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
+<div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signup">
+        <form id="loginForm" onsubmit="lahetaKayttaja(this); return false;">
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input type='text' name='Tunnus' value='' placeholder='KäyttäjäTunnus...'><br>
+            <input type='password' name='salasana' value='' placeholder='Salasana...'><br>
+            <button type="submit">Log In</button>
+        </form>
+        <p id='result'></p>
+    </div>
+</div>
+
 <script>
 function lahetaKayttaja(lomake){
     var user = {
@@ -13,7 +29,7 @@ function lahetaKayttaja(lomake){
         Salasana: lomake.salasana.value
     };
     var jsonUser = JSON.stringify(user);
-    
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -26,16 +42,9 @@ function lahetaKayttaja(lomake){
     };
     xmlhttp.open("POST", "../php/kirjaudu.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send("user=" + jsonUser);    
+    xmlhttp.send("user=" + jsonUser);
 }
 </script>
-
-<form id='userlomake' onsubmit='lahetaKayttaja(this); return false;'>
-KäyttäjäTunnus: <input type='text' name='Tunnus' value='' placeholder='KäyttäjäTunnus...'><br>
-salasana: <input type='password' name='salasana' value='' placeholder='Salasana...'><br> 
-<input type='submit' name='ok' value='Lähetä'><br>
-</form>
-<p id='result'></p>
 
 </body>
 </html>
