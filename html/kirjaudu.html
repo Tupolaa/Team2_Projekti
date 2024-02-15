@@ -9,36 +9,50 @@
 <body>
 
 <div class="main">
+    <!-- Näytä/piilota lomake käyttämällä checkboxia -->
     <input type="checkbox" id="chk" aria-hidden="true">
     <div class="signup">
+        <!-- Lomake käyttäjän kirjautumiseen -->
         <form id="loginForm" onsubmit="lahetaKayttaja(this); return false;">
+            <!-- Lomakkeen tiedot -->
             <label for="chk" aria-hidden="true">Sign up</label>
             <input type='text' name='Tunnus' value='' placeholder='KäyttäjäTunnus...'><br>
             <input type='password' name='salasana' value='' placeholder='Salasana...'><br>
+            <!-- Kirjaudu-painike -->
             <button type="submit">Log In</button>
         </form>
+        <!-- Näytä vastaus tähän p-elementtiin -->
         <p id='result'></p>
     </div>
 </div>
 
 <script>
+// Funktio lähettää käyttäjän tiedot palvelimelle ja käsittelee vastauksen
 function lahetaKayttaja(lomake){
+    // Kerää käyttäjän syöttämät tiedot lomakkeesta ja tallentaa ne objektiin
     var user = {
         Tunnus: lomake.Tunnus.value,
         Salasana: lomake.salasana.value
     };
+    // Muuntaa käyttäjäobjektin JSON-muotoon
     var jsonUser = JSON.stringify(user);
 
+    // Luo uuden XMLHttpRequest-olion
     var xmlhttp = new XMLHttpRequest();
+    // Käsittelee vastauksen kun pyyntö on valmis
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            // Tarkista vastauksen sisältö
             if (this.responseText == "ok") {
+                // Jos vastaus on "ok", ohjaa käyttäjän admin_panel.php-sivulle
                 window.location.assign("../php/admin_panel.php");
             } else {
+                // Muussa tapauksessa näytä vastaus käyttäjälle
                 document.getElementById("result").innerHTML = this.responseText;
             }
         }
     };
+    // Lähetä POST-pyyntö palvelimelle JSON-muodossa olevan käyttäjäobjektin kanssa
     xmlhttp.open("POST", "../php/kirjaudu.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("user=" + jsonUser);
