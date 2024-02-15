@@ -1,14 +1,16 @@
 <?php 
-
-
+// Käynnistetään istunto
 session_start();
+// Tarkistetaan, onko käyttäjä kirjautunut sisään
 if (!isset($_SESSION["kayttaja"])){
+    // Jos käyttäjä ei ole kirjautunut sisään, ohjataan hänet kirjautumissivulle
     header("Location:../html/kirjaudu.html");
     exit;
 }
+// Sisällytetään tiedosto, joka sisältää tietokantayhteyden muodostamiseen tarvittavat tiedot
 include("./connect.php");
 
-// Include PHPMailer library files 
+// Sisällytetään PHPMailer-kirjaston tiedostot
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\SMTP; 
 use PHPMailer\PHPMailer\Exception; 
@@ -16,48 +18,45 @@ require 'Mailer/Exception.php';
 require 'Mailer/PHPMailer.php'; 
 require 'Mailer/SMTP.php'; 
 
-// Assuming you have already connected to your database and have a $conn variable available.
-
-// Check if form is submitted
+// Tarkistetaan, onko lomake lähetetty
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Create an instance; Pass `true` to enable exceptions 
+    // Luo PHPMailer-instanssi; Aseta `true` mahdollisten virheiden varalta
     $mail = new PHPMailer(true); 
 
     try {
-        // Fetch recipient's email from database
+        // Haetaan vastaanottajan sähköposti tietokannasta
         $sql = "SELECT Email FROM Contact WHERE id=?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('i', $_POST['recipient_id']); // Assuming you have a form field named 'recipient_id' holding the ID of the recipient
+        $stmt->bind_param('i', $_POST['recipient_id']); // Olettaen, että lomakkeella on kenttä nimeltä 'recipient_id', jossa on vastaanottajan ID
         $stmt->execute();
         $stmt->bind_result($recipientEmail);
         $stmt->fetch();
         $stmt->close();
 
-     // Server settings for Gmail SMTP
-        $mail->isSMTP();                        // Set mailer to use SMTP 
-        $mail->Host = 'smtp.gmail.com';         // Specify main and backup SMTP servers 
-        $mail->SMTPAuth = true;                 // Enable SMTP authentication 
-        $mail->Username = 'Aggress';   // Your Gmail address 
-        $mail->Password = 'Password';     // Your Gmail password 
-        $mail->SMTPSecure = 'ssl';              // Enable TLS encryption, `ssl` also accepted 
-        $mail->Port = 465;                      // TCP port to connect to 
+        // Asetetaan Gmail SMTP-palvelimen asetukset
+        $mail->isSMTP();                        // Aseta postinlähetin käyttämään SMTP:tä 
+        $mail->Host = 'smtp.gmail.com';         // Määritä pää- ja varmuuskopiointi SMTP-palvelimet 
+        $mail->SMTPAuth = true;                 // Ota SMTP-autentikointi käyttöön 
+        $mail->Username = 'Aggress';            // Gmail-osoitteesi 
+        $mail->Password = 'Password';           // Gmail-salasanasi 
+        $mail->SMTPSecure = 'ssl';              // Ota käyttöön TLS-salaus, hyväksyy myös 'ssl' 
+        $mail->Port = 465;                      // TCP-portti, johon yhdistetään 
 
+        // Lähettäjän tiedot
+        $mail->setFrom('sender@example.com', 'SenderName'); // Aseta lähettäjän sähköpostiosoite
+        $mail->addReplyTo('reply@example.com', 'SenderName'); // Aseta vastausosoite
 
-        // Sender info 
-        $mail->setFrom('sender@example.com', 'SenderName'); 
-        $mail->addReplyTo('reply@example.com', 'SenderName'); 
+        // Lisää vastaanottaja
+        $mail->addAddress($recipientEmail); // Aseta vastaanottajan sähköpostiosoite
 
-        // Add a recipient 
-        $mail->addAddress($recipientEmail); 
-
-        // Set email format to HTML 
+        // Aseta sähköpostin muoto HTML:ksi
         $mail->isHTML(true); 
 
-        // Mail subject and body content from form
-        $mail->Subject = $_POST['email_title'];
-        $mail->Body = $_POST['email_message'];
+        // Sähköpostin aihe ja viestin sisältö lomakkeelta
+        $mail->Subject = $_POST['email_title']; // Aseta sähköpostin aihe
+        $mail->Body = $_POST['email_message']; // Aseta sähköpostin viesti
 
-        // Send email 
+        // Lähetä sähköposti
         $mail->send();
         echo 'Message has been sent.';
     } catch (Exception $e) {
@@ -65,3 +64,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
