@@ -31,6 +31,7 @@ Shell.hamk.fi
  - Korjasin kirjaumis sivun, jotta se toimi ja kirjautuiminen onnistui
  - Loin php tiedoston joka lukee tietokannasta Contact formin syötteet ja tulostaa ne
  - Tein Kirjautumis login Tietokantaan josta näkee kuka on kirjautunut ja milloin.
+ - Yritin tehdä MAILER toimintoa, mutta en onnistunut
  
 
  ### Laura
