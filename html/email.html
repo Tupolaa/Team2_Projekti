@@ -5,17 +5,20 @@
     </head>
     <body>
 
+
+
         <form action="../php/email.php" method="post">
             <label for="recipient_id">Recipient ID:</label>
-            <input type="text" id="recipient_id" name="recipient_id" required><br><br>
+            <input type="text" id="recipient_id" name="recipient_id"><br><br>
             
             <label for="email_title">Email Title:</label>
-            <input type="text" id="email_title" name="email_title" required><br><br>
+            <input type="text" id="email_title" name="email_title"><br><br>
             
             <label for="email_message">Email Message:</label><br>
-            <textarea id="email_message" name="email_message" rows="4" cols="50" required></textarea><br><br>
+            <textarea id="email_message" name="email_message" rows="4" cols="50"></textarea><br><br>
             
             <input type="submit" value="Send Email">
         </form>
+        <a href="../php/admin_panel.php"> <button>Back</button> </a>
     </body>
 </html>
