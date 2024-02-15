@@ -69,7 +69,7 @@ if (!isset($_SESSION["kayttaja"])){
 
                 }
             };
-            xmlhttp.open("GET", "../php/Tulosta_login.php", true);
+            xmlhttp.open("GET", "../php/Tulosta_Login.php", true);
             xmlhttp.send();
         }
 
