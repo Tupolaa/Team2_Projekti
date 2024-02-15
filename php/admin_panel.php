@@ -88,11 +88,6 @@ if (!isset($_SESSION["kayttaja"])){
         xmlhttp.send();
     }
 </script>
-<div class="footer">
-    <ul>
-    <li><a href="../html/index.html">Main Page</a></li>
-    <li><a href='./email.php?vastaa=$rivi->id'>Answer Email</a></li>
-    </ul>
-</div>
+
 </body>
 </html>
