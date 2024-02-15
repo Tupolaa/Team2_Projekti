@@ -15,9 +15,7 @@ if (!isset($_SESSION["kayttaja"])){
     <link rel="stylesheet" href="../css/adminpanel.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
     <title>Admin Page</title>
-    <style>
-
-    </style>
+    
 </head>
 <body>
 
