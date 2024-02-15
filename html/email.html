@@ -5,24 +5,16 @@
 <body>
 
 <form action="../php/email.php" method="post">
-    <table width="400" cellspacing="2" cellpadding="0">
-        <tr>
-        <td width="29%" class="bodytext">Your name:</td>
-        <td width="71%"><input name="name" type="text" id="name" size="32"></td>
-        </tr>
-        <tr>
-        <td class="bodytext">Email address:</td>
-        <td><input name="email" type="text" id="email" size="32"></td>
-        </tr>
-        <tr>
-        <td class="bodytext">Comment:</td>
-        <td><textarea name="comment" cols="45" rows="6" id="comment" class="bodytext"></textarea></td>
-        </tr>
-        <tr>
-        <td class="bodytext"> </td>
-        <td valign="top"><input type="submit" name="Submit" value="Send"></td>
-        </tr>
-        </table>
-        </form>
+     <label for="recipient_id">Recipient ID:</label>
+    <input type="text" id="recipient_id" name="recipient_id" required><br><br>
+    
+    <label for="email_title">Email Title:</label>
+    <input type="text" id="email_title" name="email_title" required><br><br>
+    
+    <label for="email_message">Email Message:</label><br>
+    <textarea id="email_message" name="email_message" rows="4" cols="50" required></textarea><br><br>
+    
+    <input type="submit" value="Send Email">
+</form>
 </body>
 </html>

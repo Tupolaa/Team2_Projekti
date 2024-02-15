@@ -1,65 +1,67 @@
-<?php
+<?php 
 
-$vastaava = isset($_GET["vastaa"]) ? $_GET["vastaa"] : "";
 
-if (empty($vastaava)){
-    header("Location:./admin_panel.php");
+session_start();
+if (!isset($_SESSION["kayttaja"])){
+    header("Location:../html/kirjaudu.html");
     exit;
 }
+include("./connect.php");
 
-include ("./connect.php");
+// Include PHPMailer library files 
+use PHPMailer\PHPMailer\PHPMailer; 
+use PHPMailer\PHPMailer\SMTP; 
+use PHPMailer\PHPMailer\Exception; 
+require 'Mailer/Exception.php'; 
+require 'Mailer/PHPMailer.php'; 
+require 'Mailer/SMTP.php'; 
 
-$sql = "SELECT * FROM Contact WHERE id=?";
-$stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, 'i', $vastaava);
-mysqli_stmt_execute($stmt);
-$tulos = mysqli_stmt_get_result($stmt);
+// Assuming you have already connected to your database and have a $conn variable available.
 
-if (!$rivi = mysqli_fetch_object($tulos)){
-    header("Location:../html/tietuettaeiloydy.html");
-    exit;
-}
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Create an instance; Pass `true` to enable exceptions 
+    $mail = new PHPMailer(true); 
 
-$recipientEmail = $rivi->Email; // Fetching email from the database
-$senderEmail = 'teemu.tupolas@gmail.com'; // Sender's email
+    try {
+        // Fetch recipient's email from database
+        $sql = "SELECT Email FROM Contact WHERE id=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $_POST['recipient_id']); // Assuming you have a form field named 'recipient_id' holding the ID of the recipient
+        $stmt->execute();
+        $stmt->bind_result($recipientEmail);
+        $stmt->fetch();
+        $stmt->close();
 
-if (isset($_POST["name"]) && isset($_POST["message"])) {
-    $emailSubject = 'Site contact form';
-    $mailheader = "From: $senderEmail\r\n";
-    $mailheader .= "Reply-To: $senderEmail\r\n";
-    $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    $messageBody = "Name: " . $_POST["name"] . "<br>";
-    $messageBody .= "Message: " . nl2br($_POST["message"]) . "<br>";
+     // Server settings for Gmail SMTP
+        $mail->isSMTP();                        // Set mailer to use SMTP 
+        $mail->Host = 'smtp.gmail.com';         // Specify main and backup SMTP servers 
+        $mail->SMTPAuth = true;                 // Enable SMTP authentication 
+        $mail->Username = 'batterysuomi@gmail.com';   // Your Gmail address 
+        $mail->Password = 'Battery2024';     // Your Gmail password 
+        $mail->SMTPSecure = 'ssl';              // Enable TLS encryption, `ssl` also accepted 
+        $mail->Port = 465;                      // TCP port to connect to 
 
-    // Sending email to the recipient fetched from the database
-    if (mail($recipientEmail, $emailSubject, $messageBody, $mailheader)) {
-        echo "Your message was sent";
-    } else {
-        $lastError = error_get_last();
-        echo "Failed to send message. Error: " . $lastError['message'];
+
+        // Sender info 
+        $mail->setFrom('sender@example.com', 'SenderName'); 
+        $mail->addReplyTo('reply@example.com', 'SenderName'); 
+
+        // Add a recipient 
+        $mail->addAddress($recipientEmail); 
+
+        // Set email format to HTML 
+        $mail->isHTML(true); 
+
+        // Mail subject and body content from form
+        $mail->Subject = $_POST['email_title'];
+        $mail->Body = $_POST['email_message'];
+
+        // Send email 
+        $mail->send();
+        echo 'Message has been sent.';
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
     }
-
-
-} else {
-    ?>
-    <form action="" method="post">
-        <table width="400" cellspacing="2" cellpadding="0">
-           <tr>
-    <td width="29%" class="bodytext">Your name:</td>
-    <td width="71%"><input name="name" type="text" id="name" size="32"></td>
-</tr>
-
-<tr>
-    <td class="bodytext">Message:</td>
-    <td><textarea name="message" cols="45" rows="6" id="message" class="bodytext"></textarea></td>
-</tr>
-
-            <tr>
-                <td class="bodytext"> </td>
-                <td valign="top"><input type="submit" name="Submit" value="Send"></td>
-            </tr>
-        </table>
-    </form>
-    <?php
-};
+}
 ?>
